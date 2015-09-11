@@ -1,0 +1,33 @@
+/*Conception Finale */
+
+//La colonne (chaque élément de cette liste chainée représente un enregistrement)
+typedef struct Column
+{
+char Rowkey[50];
+char CellValue[50];
+long Timestamp;
+struct Column *next;
+}Column;
+//La famille (chaque élément de cette liste chainée représente une colonne)
+typedef struct Family
+{
+char CName[50];
+Column *C;
+struct Family *next;
+}Family;
+//La table (chaque élément de cette liste chainée représente une famille)
+typedef struct Table
+{
+char FName[50];
+int NVersions;
+Family *F;
+struct Table *next;
+}Table;
+//La base de données (chaque élément de cette liste chainée représente une table)
+typedef struct DataBase
+{
+char TName[50];
+int Etat;
+Table *T;
+struct DataBase *next;
+}DataBase;

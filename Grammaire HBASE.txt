@@ -1,0 +1,50 @@
+- whoami : whoami
+
+- version :  version
+
+- list : list
+
+- describe : describe ‘t1'
+
+- exists : exists 't1'
+
+- create : create ‘t1', ‘f1', ‘f2', ‘f3'
+           create ‘t1', {NAME => ‘f1', VERSIONS => 5}
+           create ‘t1', {NAME => ‘f1'}, {NAME => ‘f2'}, {NAME => ‘f3'}
+
+- get :  get ‘t1', ‘r1'
+         get ‘t1', ‘r1', ‘c1'
+         get ‘t1', ‘r1', [‘c1', ‘c2']
+	 get ‘t1', ‘r1', {TIMERANGE => [ts1, ts2]}
+         get ‘t1', ‘r1', {COLUMN => ‘c1'}
+         get ‘t1', ‘r1', {COLUMN => [‘c1', ‘c2', ‘c3']}
+         get ‘t1', ‘r1', {COLUMN => ‘c1', TIMESTAMP => ts1}
+         get ‘t1', ‘r1', {COLUMN => ‘c1', TIMERANGE => [ts1, ts2], VERSIONS => 4}
+         get ‘t1', ‘r1', {COLUMN => ‘c1', TIMESTAMP => ts1, VERSIONS => 4}
+
+- put :  put 'table', 'row', 'column_family:column_qualifier', value
+	 put 'table', 'row', 'column_family:column_qualifier', value, timestamp
+
+- alter : alter ‘t1', NAME => ‘f1', VERSIONS => 5
+          alter ‘t1', ‘delete’ => ‘f1'
+	  alter 't1', 'f1'
+
+- scan : scan ‘t1'
+
+- delete : delete ‘t1', ‘r1', ‘c1', ts1
+
+- delete all : deleteall ‘t1', ‘r1', ‘c1'
+	       deleteall 't1', 'r1'
+               deleteall 't1', 'r1', 'c1', timestamp
+
+- drop : drop ‘t1'
+
+- enable :  enable ‘t1'
+
+- disable : disable ‘t1'
+
+- is enabled :  is_enabled ‘t1'
+
+- is disabled : is_disabled ‘t1'
+
+- truncate : truncate ‘t1'
